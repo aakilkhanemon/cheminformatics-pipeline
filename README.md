@@ -48,6 +48,30 @@ conda activate mardockprep
 
 # 2. Execute end-to-end 14-step preparation pipeline
 python -m src.pipeline_runner \
+
+---
+
+mardockprep/
+├── assets/
+│   └── workflow_architecture.png     # 600 DPI 14-step vector flowchart
+├── data/
+│   ├── raw/                          # Input marine SMILES / SDF libraries
+│   └── processed/                    # Step-wise intermediate & final docking-ready SDF/PDBQT
+├── notebooks/
+│   └── mardockprep_colab.ipynb       # Interactive Google Colab notebook
+├── src/
+│   ├── __init__.py
+│   ├── curator_2d.py                 # Steps 1–6: Deduplication, Sanitization, Desalting, Standardization, bRo5/Ro5, PAINS
+│   ├── expander_chem.py              # Steps 7–8: Physiological Ionization & Stereochemical Enumeration
+│   ├── builder_3d.py                 # Steps 9–14: ETKDGv3 Embedding, Valence Audit, Charges, Forcefield, Minimization, Pruning
+│   └── pipeline_runner.py            # Master CLI orchestrator (`python -m src.pipeline_runner`)
+├── results/
+│   ├── figures/                      # Attrition plots, chemical space PCA, energy relief histograms
+│   └── tables/                       # Step-by-step audit CSVs (Table 1 & Table 2 outputs)
+├── CITATION.cff                      # Academic citation metadata
+├── environment.yml                   # Reproducible Conda environment
+├── LICENSE                           # MIT License
+└── README.md                         # Repository documentation
   --input data/raw/FDAAI_20_Meta.sdf \
   --outdir data/processed \
   --filter-mode bro5 \
