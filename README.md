@@ -4,7 +4,11 @@
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue.svg)
 ![RDKit 2026.03](https://img.shields.io/badge/RDKit-2026.03-orange.svg)
 
-![MarDockPrep Workflow](assets/Architectural_Workflow.png)
+<p align="center">
+  <img src="assests/Architectural_Workflow.png" alt="Cheminformatics Pipeline for Marine Natural Product Libraries
+" width="850">
+</p>
+
 
 Official implementation of the 14-step RDKit-accelerated small-molecule curation, stereochemical enumeration, and 3D force-field refinement pipeline from:  
 **"MarDockPrep: An Automated 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries"**  
