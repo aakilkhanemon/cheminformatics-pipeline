@@ -1,3 +1,4 @@
+Markdown
 # MarDockPrep: Cheminformatics Pipeline for Marine Natural Product Libraries
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
@@ -12,7 +13,7 @@ Official implementation of the 14-step RDKit-accelerated small-molecule curation
 
 ---
 
-## Algorithmic Architecture (14-Step Chronological Workflow)
+## Algorithmic Architecture & 14-Step Decision Logic
 
 Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic backbones, heavy halogenation, and Beyond-Rule-of-5 (bRo5) physicochemical profiles. **MarDockPrep** automates library preparation across four modular stages:
 
@@ -48,36 +49,43 @@ conda activate mardockprep
 
 # 2. Execute end-to-end 14-step preparation pipeline
 python -m src.pipeline_runner \
-
----
-
-## Directory Layout
-
-```text
-mardockprep/
-├── assets/
-│   └── workflow_architecture.png     # 600 DPI 14-step vector flowchart
-├── data/
-│   ├── raw/                          # Input marine SMILES / SDF libraries
-│   └── processed/                    # Step-wise intermediate & final docking-ready SDF/PDBQT
-├── notebooks/
-│   └── mardockprep_colab.ipynb       # Interactive Google Colab notebook
-├── src/
-│   ├── __init__.py
-│   ├── curator_2d.py                 # Steps 1–6: Deduplication, Sanitization, Desalting, Standardization, bRo5/Ro5, PAINS
-│   ├── expander_chem.py              # Steps 7–8: Physiological Ionization & Stereochemical Enumeration
-│   ├── builder_3d.py                 # Steps 9–14: ETKDGv3 Embedding, Valence Audit, Charges, Forcefield, Minimization, Pruning
-│   └── pipeline_runner.py            # Master CLI orchestrator (`python -m src.pipeline_runner`)
-├── results/
-│   ├── figures/                      # Attrition plots, chemical space PCA, energy relief histograms
-│   └── tables/                       # Step-by-step audit CSVs (Table 1 & Table 2 outputs)
-├── CITATION.cff                      # Academic citation metadata
-├── environment.yml                   # Reproducible Conda environment
-├── LICENSE                           # MIT License
-└── README.md                         # Repository documentation
   --input data/raw/FDAAI_20_Meta.sdf \
   --outdir data/processed \
   --filter-mode bro5 \
   --max-isomers 32 \
   --num-confs 20 \
   --rmsd-cutoff 0.5
+Directory Layout
+Plaintext
+mardockprep/
+├── assets/
+│   └── workflow_architecture.png     # Workflow and 14-step architecture diagrams
+├── data/
+│   ├── raw/                          # Input raw marine SMILES / SDF datasets
+│   └── processed/                    # Step-wise intermediate & docking-ready 3D SDF files
+├── notebooks/
+│   └── mardockprep_colab.ipynb       # Interactive Google Colab notebook
+├── src/
+│   ├── __init__.py                   # Package initialization
+│   ├── curator_2d.py                 # Steps 1–6: 2D filtration, desalting, standardization & PAINS
+│   ├── expander_chem.py              # Steps 7–8: Physiological ionization & stereoisomer enumeration
+│   ├── builder_3d.py                 # Steps 9–14: ETKDGv3 embedding, charge/forcefield & RMSD pruning
+│   └── pipeline_runner.py            # Master CLI orchestrator (`python -m src.pipeline_runner`)
+├── results/
+│   ├── figures/                      # Exported 600 DPI PNG/TIFF figures
+│   └── tables/                       # Step-by-step audit CSVs (Table 1 & Table 2)
+├── CITATION.cff                      # Academic citation metadata
+├── environment.yml                   # Reproducible Conda environment
+├── LICENSE                           # MIT License
+└── README.md                         # Repository documentation
+Citation
+If you use MarDockPrep in your research, please cite:
+
+Code snippet
+@software{emon2026mardockprep,
+  author       = {Emon, Mohammed},
+  title        = {{MarDockPrep: An Automated 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries}},
+  year         = {2026},
+  version      = {1.0.0},
+  url          = {[https://github.com/aakilkhanemon/mardockprep](https://github.com/aakilkhanemon/mardockprep)}
+}
