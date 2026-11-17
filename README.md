@@ -51,6 +51,8 @@ python -m src.pipeline_runner \
 
 ---
 
+## Directory Layout
+
 mardockprep/
 ├── assets/
 │   └── workflow_architecture.png     # 600 DPI 14-step vector flowchart
