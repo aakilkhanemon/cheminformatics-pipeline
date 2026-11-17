@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use MarDockPrep in your research, please cite this software and the associated manuscript."
+title: "MarDockPrep: An Open-Source 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries"
+version: 1.0.0
+date-released: 2026-11-17
+license: MIT
+authors:
+  - family-names: Emon
+    given-names: Mohammed
+    alias: aakilkhanemon
+repository-code: "https://github.com/aakilkhanemon/mardockprep"
+keywords:
+  - marine natural products
+  - cheminformatics
+  - rdkit
+  - virtual screening
+  - molecular docking
