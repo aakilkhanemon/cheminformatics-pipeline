@@ -1,0 +1,12 @@
+name: mardockprep
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - rdkit=2026.03.3
+  - pandas>=2.2.0
+  - numpy>=2.0.0
+  - pip
+  - pip:
+      - dimorphite-dl>=1.3.2
