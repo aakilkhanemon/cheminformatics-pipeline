@@ -1,4 +1,3 @@
-Markdown
 # MarDockPrep: Cheminformatics Pipeline for Marine Natural Product Libraries
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
@@ -15,7 +14,7 @@ Official implementation of the 14-step RDKit-accelerated small-molecule curation
 
 ## Algorithmic Architecture & 14-Step Decision Logic
 
-Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic backbones, heavy halogenation, and Beyond-Rule-of-5 (bRo5) physicochemical profiles. **MarDockPrep** automates library preparation across four modular stages:
+Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic backbones, heavy halogenation, and Beyond-Rule-of-5 (bRo5) physicochemical profiles. **MarDockPrep** automates library preparation across three modular computational stages:
 
 1. **2D Structural Curation & Property Filtering (`src/curator_2d.py`)**
    * **Step 1 (Deduplication):** Deterministic `InChIKey` hashing (`rdkit.Chem.inchi`) to eliminate redundant entries.
@@ -55,8 +54,13 @@ python -m src.pipeline_runner \
   --max-isomers 32 \
   --num-confs 20 \
   --rmsd-cutoff 0.5
-Directory Layout
-Plaintext
+```
+
+---
+
+## Directory Layout
+
+```text
 mardockprep/
 ├── assets/
 │   └── workflow_architecture.png     # Workflow and 14-step architecture diagrams
@@ -78,10 +82,15 @@ mardockprep/
 ├── environment.yml                   # Reproducible Conda environment
 ├── LICENSE                           # MIT License
 └── README.md                         # Repository documentation
-Citation
-If you use MarDockPrep in your research, please cite:
+```
 
-Code snippet
+---
+
+## Citation
+
+If you use **MarDockPrep** in your research, please cite:
+
+```bibtex
 @software{emon2026mardockprep,
   author       = {Emon, Mohammed},
   title        = {{MarDockPrep: An Automated 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries}},
@@ -89,3 +98,4 @@ Code snippet
   version      = {1.0.0},
   url          = {[https://github.com/aakilkhanemon/mardockprep](https://github.com/aakilkhanemon/mardockprep)}
 }
+```
