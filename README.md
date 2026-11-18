@@ -81,7 +81,7 @@ mardockprep/
 │   └── pipeline_runner.py            # Master CLI orchestrator (`python -m src.pipeline_runner`)
 ├── results/
 │   ├── figures/                      # Exported 600 DPI PNG/TIFF figures
-│   └── tables/                       # Step-by-step audit CSVs (Table 1 & Table 2)
+│   └── tables/                       # Step-by-step audit CSVs (Table 1 and Table 2)
 ├── CITATION.cff                      # Academic citation metadata
 ├── environment.yml                   # Reproducible Conda environment
 ├── LICENSE                           # MIT License
