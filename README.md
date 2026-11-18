@@ -1,4 +1,4 @@
-# MarDockPrep: Cheminformatics Pipeline for Marine Natural Product Libraries
+# Cheminformatics Pipeline for Marine Natural Product Libraries
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue.svg)
@@ -11,14 +11,14 @@
 
 
 Official implementation of the 14-step RDKit-accelerated small-molecule curation, stereochemical enumeration, and 3D force-field refinement pipeline from:  
-**"MarDockPrep: An Automated 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries"**  
+**"An Automated 14-Step Cheminformatics Pipeline for Preparing Complex Marine Chemical Libraries"**  
 *Mohammed Emon et al.*
 
 ---
 
-## Algorithmic Architecture & 14-Step Decision Logic
+## Algorithmic Architecture and 14-Step Decision Logic
 
-Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic backbones, heavy halogenation, and Beyond-Rule-of-5 (bRo5) physicochemical profiles. **MarDockPrep** automates library preparation across three modular computational stages:
+Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic backbones, heavy halogenation, and Beyond-Rule-of-5 (bRo5) physicochemical profiles. Automates library preparation across three modular computational stages:
 
 1. **2D Structural Curation & Property Filtering (`src/curator_2d.py`)**
    * **Step 1 (Deduplication):** Deterministic `InChIKey` hashing (`rdkit.Chem.inchi`) to eliminate redundant entries.
@@ -41,7 +41,7 @@ Marine secondary metabolites frequently exhibit dense stereocenters, macrocyclic
 
 ---
 
-## Quickstart & CLI Execution
+## Quickstart and CLI Execution
 
 ```bash
 # 1. Clone repository and create environment
